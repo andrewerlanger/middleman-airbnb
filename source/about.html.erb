@@ -2,19 +2,24 @@
 title: Le Wagon - Middleman - About
 ---
 
+<% creators = [
+  {name: "Andrew Erlanger", username: "andrewerlanger"},
+  {name: "Jadwiga Courmert", username: "jadwigafr"}
+] %>
+
 <div id="about">
   <div class="about-content">
     <h1>This template was built with <i class="fas fa-heart"></i> by</h1>
     <ul class="list-inline">
-      <% data.users.each do |user| %>
+      <% creators.each do |creator| %>
         <li>
-          <% link_to "https://kitt.lewagon.com/alumni/#{user.github_nickname}", target: "_blank" do %>
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{user.github_nickname}", class: "img-circle" %>
+          <% link_to "https://kitt.lewagon.com/alumni/#{creator[:username]}", target: "_blank" do %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{creator[:username]}", class: "img-circle" %>
           <% end %>
-          <h2><%= user.name %></h2>
+          <h2><%= creator[:name] %></h2>
           <p>
-            <% link_to "https://github.com/#{user.github_nickname}", target: "_blank" do %>
-              <i class="fab fa-github"></i> <%= user.github_nickname %>
+            <% link_to "https://github.com/#{creator}", target: "_blank" do %>
+              <i class="fab fa-github"></i> <%= creator[:username] %>
             <% end %>
           </p>
         </li>
