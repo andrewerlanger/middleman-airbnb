@@ -2,16 +2,20 @@
 title: Le Wagon - Middleman
 ---
 <!-- VARIABLES -->
-<% city_names = %w[shanghai copenhagen lisbon tokyo london paris] %>
+<% city_names = %w[shanghai copenhagen lisbon tokyo london paris kyoto amsterdam] %>
 
 <!-- BANNER -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
   <div class="banner-content">
     <h1>Le Wagon Berlin</h1>
     <p>Learn to code with us in Berlin</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
+    <a class="btn btn-danger btn-lg">Start now</a>
   </div>
+  <a href="#intro" class="scroll-button" style="text-decoration: none;"><i class="fas fa-arrow-down"></i></a>
 </div>
+
+<!-- INTRO -->
+<h3 class="text-center"><a name="intro" id="intro">Browse Courses</a></h3>
 
 <!-- CARDS -->
 <div class="container">
@@ -24,7 +28,7 @@ title: Le Wagon - Middleman
           <h2>Le Wagon <%= city.capitalize %></h2>
           <p>Very cool city, the best</p>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/random">
+        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= rand(1..100) %>">
         <a class="card-link" href="#" ></a>
       </div>
     </div>
