@@ -7,29 +7,29 @@ title: Le Wagon - Middleman
 <!-- BANNER -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
   <div class="banner-content">
-    <h1>Le Wagon Berlin</h1>
-    <p>Learn to code with us in Berlin</p>
+    <h1>A Few Flats</h1>
+    <p>Come have a look at them</p>
     <a class="btn btn-danger btn-lg">Start now</a>
   </div>
   <a href="#intro" class="scroll-button" style="text-decoration: none;"><i class="fas fa-arrow-down"></i></a>
 </div>
 
 <!-- INTRO -->
-<h3 class="text-center"><a name="intro" id="intro">Browse Courses</a></h3>
+<h3 class="text-center"><a name="intro" id="intro">Browse Flats</a></h3>
 
 <!-- CARDS -->
 <div class="container">
   <div class="row">
-    <% city_names.each do |city| %>
+    <% data.flats.each do |owner, flat| %>
     <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/<%= city %>');">
-        <div class="card-category">Popular</div>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+        <div class="card-category"><%= %w[Popular New Classic Retro Terrible].sample %></div>
         <div class="card-description">
-          <h2>Le Wagon <%= city.capitalize %></h2>
-          <p>Very cool city, the best</p>
+          <h2><%= flat.name.capitalize %></h2>
+          <p><%= flat.city_name.upcase %></p>
         </div>
-        <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= rand(1..100) %>">
-        <a class="card-link" href="#" ></a>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "card-user" %>
+        <%= link_to "", "flats/#{owner}.html", class: "card-link" %>
       </div>
     </div>
     <% end %>

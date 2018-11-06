@@ -1,0 +1,46 @@
+.header-flat {
+  border: 1px solid #dce0e0;
+  background: white;
+  padding: 2em 0;
+
+  h1, h4 {
+    color: $gray;
+    font-size: 1em;
+  }
+
+  p {
+    font-size: 0.85em;
+    font-weight: 300;
+  }
+}
+
+.header-flat-details {
+  display: flex;
+  align-items: center;
+  padding: 30px;
+  padding-left: 0;
+}
+
+.header-flat-owner {
+  padding: 10px;
+  margin: 0;
+}
+
+.header-flat-name {
+  padding: 10px;
+  margin: 0;
+  h1 {
+    margin-top: 0;
+  }
+}
+
+.gray-background {
+  background: $light-gray;
+  padding-bottom: 1em;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px 0 $light-gray;
+}
+
+h4 {
+  text-align: center;
+}
